@@ -42,7 +42,8 @@ def proxy(path):
     print(request.headers)
     print(prepare_headers(request.headers))
     response = requests.request(request.method, remote_url,
-        data=request.data or request.form,
+        params=request.form,
+        data=request.data,
         headers=prepare_headers(request.headers),
         stream=True,
     )
