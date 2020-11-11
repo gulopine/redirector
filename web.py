@@ -39,6 +39,8 @@ def proxy(path):
 
     remote_url = f"{REMOTE_BASE}/{path}"
     print(remote_url)
+    print(request.headers)
+    print(prepare_headers(request.headers))
     response = requests.request(request.method, remote_url,
         data=request.data or request.form,
         headers=prepare_headers(request.headers),
