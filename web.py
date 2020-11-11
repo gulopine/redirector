@@ -37,13 +37,12 @@ def proxy(path):
     if path.endswith(".css") or path.endswith(".js"):
         abort(404)
 
-    remote_url = f"{REMOTE_BASE}/{path}"
+    remote_url = f"{REMOTE_BASE}{request.full_path}"
     print(remote_url)
     print(request.headers)
     print(prepare_headers(request.headers))
     response = requests.request(request.method, remote_url,
-        params=request.form,
-        data=request.data,
+        data=request.data or request.form,
         headers=prepare_headers(request.headers),
         stream=True,
     )
