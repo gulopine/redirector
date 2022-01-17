@@ -3,10 +3,10 @@
   "description": "A simple redirector for services with weird URL patterns",
   "env": {
     "INITIAL_REDIRECT": {
-      "description": "Path to load with requesting the root of the URL",
+      "description": "Path to load with requesting the root of the URL"
     },
     "REMOTE_BASE": {
-      "description": "Base URL on the remote server to add in when translating requests",
+      "description": "Base URL on the remote server to add in when translating requests"
     }
   }
 }
